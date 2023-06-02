@@ -1,0 +1,49 @@
+.awal{
+    box-shadow: 8px 8px 5px rgb(110, 110, 110);
+    background: white;
+    border-radius: 10px;
+    margin: 0px 200px 0px 200px;
+}
+
+.body{
+    background-image: url('Maldives.jpg');
+}
+
+.up{
+    display: flex;
+    border-bottom: 1px solid;
+    margin-bottom: 15px;
+    padding: 10px 0;
+}
+
+.up input{
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+}
+
+.col{
+    margin: 5px 50px 5px 50px;
+}
+
+.button{
+    border-radius: 10px;
+    background-color: #2672ff;
+    margin-top: 3%;
+    width: 100%;
+    border: none;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    margin-bottom: 5%;
+}
+
+.button:hover{
+    background-color: #70b3ff;
+}
+
+h2{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 6%;
+}
