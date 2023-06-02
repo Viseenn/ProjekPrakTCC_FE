@@ -2,7 +2,10 @@
 <?php
 session_start();
 
-if (isset($_SESSION['token_name'])) {}
+if (isset($_SESSION['token_name'])) {
+} else {
+  header("location: login.php", true, 301);
+}
 ?>
 <html lang="en">
 
