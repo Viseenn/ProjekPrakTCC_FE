@@ -1,11 +1,6 @@
 <!doctype html>
 <?php
-session_start();
-
-if (isset($_SESSION['token_name'])) {
-} else {
-	header("location: login.php", true, 301);
-}
+if (isset($_SESSION['token_name'])) {}
 ?>
 <html lang="en">
 
