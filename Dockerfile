@@ -2,10 +2,10 @@
 FROM php:latest
 
 # Set folder kerja di dalam container
-WORKDIR /var/www/html
+WORKDIR /login
 
 # Salin file-filenya ke folder kerja di dalam container
-COPY . /var/www/html
+COPY . .
 
 # Pasang dependensi yang dibutuhkan
 RUN apt-get update && apt-get install -y \
