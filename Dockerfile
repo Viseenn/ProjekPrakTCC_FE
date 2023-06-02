@@ -2,28 +2,10 @@
 FROM php:latest
 
 # Set folder kerja di dalam container
-WORKDIR /login
+WORKDIR /var/www/html
 
 # Salin file-filenya ke folder kerja di dalam container
-COPY . .
-
-# Pasang dependensi yang dibutuhkan
-RUN apt-get update && apt-get install -y \
-    libpng-dev \
-    libjpeg-dev \
-    libmcrypt-dev \
-    libxml2-dev \
-    libzip-dev \
-    zip \
-    unzip
-
-# Install ekstensi PHP yang diperlukan
-RUN docker-php-ext-install \
-    gd \
-    mysqli \
-    pdo_mysql \
-    soap \
-    zip
+COPY . /var/www/html
 
 # Expose port yang digunakan oleh aplikasi PHP
 EXPOSE 80
