@@ -247,15 +247,6 @@ $(document).ready(function () {
   });
 
   $("#btnUpdateBarang").on("click", function () {
-    /*var data = {};
-		
-	  data["barang"] = $('#inputBarangNama').val();
-	  data["jumlah"] = $('#inputBarangJumlah').val();
-      data["satuan"] = $('#inputBarangSatuan').val();
-	  data["tanggal"] = $('#inputBarangTanggal').val();
-      data["kategori"] = $('#inputBarangKategori').val();
-      data["kondisi"] = $('#inputBarangStatus').val();
-	  JSON.stringify(data);*/
 
     var idBarang = $("#inputBarangId").val();
     var KodeBarang = $("#inputBarangKode").val();
@@ -384,11 +375,6 @@ $(document).ready(function () {
             var data_pegawai = res;
             var button = "";
             for (var i = 0; i < data_pegawai.length; i++) {
-              //table.row.add([1, 2, 3, 4, 5, 6, 7, 8, 9, 10).draw(false);
-
-              //table.row.add([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]).draw();
-              //editbtn = '<td><button type="button" class="btn btn-success" id="btnEditGrupMedis"><i class="fa fa-edit"></i></button></td>';
-              //checklist = '<td><center><input type="checkbox" id="checkItem" class="checkItem" value="'+result[i].LGM_ID+'"></center></td>';
 
               button =
                 '<button type="button" id="btnEditPegawai" class="btn btn-primary">Edit</button><button type="button" id="btnDeletePegawai" class="btn btn-danger">Hapus</button>';
@@ -433,16 +419,13 @@ $(document).ready(function () {
 
   $("#btnSubmitPegawai").on("click", function () {
     $("#modalPegawaiTitle").val("Tambah Pegawai");
-    var IdPegawai = $("#inputIdPegawai").val();
     var Email = $("#inputEmail").val();
     var Password = $("#inputPassword").val();
     var Nama_lengkap = $("#inputNama_lengkap").val();
     var Alamat = $("#inputAlamat").val();
     var No_hp = $("#inputNo_hp").val();
 
-    if (IdPegawai == "") {
-      alert("Id Pegawai Harus Diisi!");
-    } else if (Email == "") {
+    if (Email == "") {
       alert("Email Harus Diisi!");
     } else if (Password == "") {
       alert("Password Harus Diisi!");
@@ -453,8 +436,8 @@ $(document).ready(function () {
     } else if (No_hp == "") {
       alert("No HP Harus Diisi!");
     } else {
+
       var data = {};
-      data["id_pegawai"] = IdPegawai;
       data["email"] = Email;
       data["password"] = Password;
       data["nama_lengkap"] = Nama_lengkap;
@@ -478,7 +461,7 @@ $(document).ready(function () {
             var status = result.status;
             var message = result.message;
 
-            if (status == "success") {
+            if (result) {
               $("#closeModalPegawai").click();
               alert(message);
             } else {
@@ -518,19 +501,9 @@ $(document).ready(function () {
   });
 
   $("#btnUpdatePegawai").on("click", function () {
-    /*var data = {};
-		
-	  data["barang"] = $('#inputBarangNama').val();
-	  data["jumlah"] = $('#inputBarangJumlah').val();
-      data["satuan"] = $('#inputBarangSatuan').val();
-	  data["tanggal"] = $('#inputBarangTanggal').val();
-      data["kategori"] = $('#inputBarangKategori').val();
-      data["kondisi"] = $('#inputBarangStatus').val();
-	  JSON.stringify(data);*/
 
-    var IdPegawai = $("#inputIdPegawai").val();
+    var idPegawai = $("#inputIdPegawai").val();
     var Email = $("#inputEmail").val();
-    var Password = $("#inputPassword").val();
     var Nama_lengkap = $("#inputNama_lengkap").val();
     var Alamat = $("#inputAlamat").val();
     var No_hp = $("#inputNo_hp").val();
@@ -545,10 +518,7 @@ $(document).ready(function () {
       alert("No HP Harus Diisi!");
     } else {
       var data = {};
-
-      data["id_pegawai"] = IdPegawai;
       data["email"] = Email;
-      data["password"] = Password;
       data["nama_lengkap"] = Nama_lengkap;
       data["alamat"] = Alamat;
       data["no_hp"] = No_hp;
@@ -557,7 +527,7 @@ $(document).ready(function () {
       $.ajax({
         type: "PUT",
         contentType: "application/json",
-        url: serverUrl + "/barang/" + idPegawai,
+        url: serverUrl + "/pegawai/" + idPegawai,
         data: JSON.stringify(data),
         dataType: "json",
         timeout: 100000,
@@ -570,9 +540,8 @@ $(document).ready(function () {
             var status = result.status;
             var message = result.message;
 
-            if (status == "success") {
+            if (result) {
               $("#closeModalPegawai").click();
-              alert(message);
               $("#refreshPegawai").click();
             } else {
               alert(message);

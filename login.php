@@ -20,9 +20,6 @@
     <div id="awal" class="awal">
         <div class="container mt-5">
             <div class="row pt-3">
-            <div class="col-md-6 me-3 mt-4">
-                <img src="login.png" alt="login" class="gambarlogin">
-            </div>
             <div class="col mt-5">
                 <div class="row">
                     <h2>Login</h2>

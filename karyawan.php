@@ -70,20 +70,38 @@ if (isset($_SESSION['token_name'])) {
 		<div class="h1"> DAFTAR PEGAWAI </div>
 	</div>
 
-	<!-- Button trigger modal -->
-	<button type="button" id="btnTambahPegawai" class="btn btn-primary">
-		Tambah
-	</button>
-	<button type="button" id="btnPopUpPegawai" class="btn btn-primary" data-bs-toggle="modal"
-		data-bs-target="#inputPegawai" style="display:none;">
-		Tambah
-	</button>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<div class="refresh">
+							<button type="button" id="btnTambahPegawai" class="btn btn-primary">
+								Tambah
+							</button>
+							<button id="refreshPegawai" class="tambah1"
+								style="border:none; padding: 4px 8px 4px 7px;"><i class="bi bi-plus"></i>
+								Refresh</button>
+						</div>
+					</li>
+					<li class="nav-item pl-3">
+						<button type="button" id="btnPopUpPegawai" class="btn btn-primary" data-bs-toggle="modal"
+							data-bs-target="#inputPegawai" style="display:none;">
+							Tambah
+						</button>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="data.php">Daftar Barang</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="login.php">Logout</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-	</br>
-	<div class="refresh">
-		<button id="refreshPegawai" class="tambah1" style="border:none; padding: 4px 8px 4px 7px;"><i
-				class="bi bi-plus"></i> Refresh</button>
-	</div>
+
 
 	<!-- Modal -->
 	<div class="modal fade" id="inputPegawai" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -98,7 +116,7 @@ if (isset($_SESSION['token_name'])) {
 					<div class="mb-3">
 						<label for="exampleInputPassword1" class="form-label">Id Pegawai</label>
 						<input type="input" class="form-control" id="inputIdPegawai"
-							value="<?php echo $_SESSION['id_pegawai']; ?>" disabled>
+					 disabled>
 					</div>
 					<div class="mb-3">
 						<label for="exampleInputPassword1" class="form-label">Email</label>
