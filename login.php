@@ -14,7 +14,7 @@
 	<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 	<script src="json.js"></script>
 	
-    <title>Login Data Buku</title>
+    <title>Login</title>
 </head>
 <body class="body">
     <div id="awal" class="awal">
